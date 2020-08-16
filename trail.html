@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>10000 dice game</title>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <h1>10000 dice game</h1>
+
+    <div class="conatiner-players">
+
+        <div class="player" id="player-1">
+
+            <h4>Player 1</h4>
+            <h5 id="player-1-score">Score: 0</h5>
+
+        </div>
+
+        <div class="player" id="player-2">
+
+            <h4>Player 2</h4>
+            <h5 id="player-2-score">Score: 0</h5>
+
+        </div>
+
+        <div class="player" id="player-3">
+
+            <h4>Player 3</h4>
+            <h5 id="player-3-score">Score: 0</h5>
+
+        </div>
+
+        <div class="player" id="player-4">
+
+            <h4>Player 4</h4>
+            <h5 id="player-4-score">Score: 0</h5>
+
+        </div>
+
+    </div>
+
+    <div class="conatiner-settings">
+
+        <button type="button" class="addPlayer" onclick="addPlayer()">
+            Add Player
+        </button>
+
+        <button type="button" class="removePlayer" onclick="removePlayer()">
+            Remove Player
+        </button>
+
+        <button type="button" class="startGame" id="start-game-button" onclick="startGame()">
+            Start Game
+        </button>
+
+        <button type="button" class="stopGame" id="stop-game-button" onclick="stopGame()" display="none">
+            Stop Game
+        </button>
+
+    </div>
+
+    <div class="container-turn">
+
+        <h2 id="players-turn">Players turn: </h2>
+
+    </div>
+
+    <div class="container-dice">
+
+        <div class="dice">
+            <img class="img" id="dice1" src="pictures/dice6.png" onclick="checkDice(this)">
+        </div>
+
+        <div class="dice">
+            <img class="img" id="dice2" src="pictures/dice2.png" onclick="checkDice(this)">
+        </div>
+
+        <div class="dice">
+            <img class="img" id="dice3" src="pictures/dice1.png" onclick="checkDice(this)">
+        </div>
+
+        <div class="dice">
+            <img class="img" id="dice4" src="pictures/dice4.png" onclick="checkDice(this)">
+        </div>
+
+        <div class="dice">
+            <img class="img" id="dice5" src="pictures/dice6.png" onclick="checkDice(this)">
+        </div>
+
+        <div class="dice">
+            <img class="img" id="dice6" src="pictures/dice5.png" onclick="checkDice(this)">
+        </div>
+    </div>
+
+    <div class="conatiner-play">
+
+        <button type="button" class="roll" onclick="displayImage()">
+            Roll dice
+        </button>
+
+        <button type="button" class="bank" onclick="bank()">
+            Bank points
+        </button>
+
+    </div>
+
+    <div class="conatiner-play-feed">
+
+            <h3 id="play-feed-text"></h3>
+    
+    </div>
+
+</body>
+
+<script type="text/javascript" language="javascript" src="script.js"></script>
+
+</html>

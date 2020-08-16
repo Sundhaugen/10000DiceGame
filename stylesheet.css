@@ -1,0 +1,98 @@
+h1 {
+
+    margin: auto;
+    text-align: center;
+
+}
+
+.conatiner-players {
+
+    width: 70%;
+    margin: auto;
+    text-align: center;
+
+}
+
+.player {
+
+    display: inline-block;
+
+}
+
+.player-1 {
+
+    display: block;
+
+}
+
+.player-2 {
+
+    display: block;
+
+}
+
+#player-3 {
+
+    display: none;
+
+}
+
+#player-4 {
+
+    display: none;
+
+}
+
+#stop-game-button {
+
+    display: none;
+
+}
+
+
+.conatiner-settings {
+
+    width: 70%;
+    margin: auto;
+    text-align: center;
+
+}
+
+.container-turn {
+
+    width: 70%;
+    margin: auto;
+    text-align: center;
+
+}
+
+
+.container-dice {
+
+    width: 70%;
+    margin: auto;
+    text-align: center;
+
+}
+
+.dice {
+
+    display: inline-block;
+
+}
+
+.conatiner-play {
+
+    width: 70%;
+    margin: auto;
+    text-align: center;
+
+}
+
+.conatiner-play-feed {
+
+    width: 70%;
+    margin: auto;
+    text-align: center;
+
+}
