@@ -316,7 +316,9 @@ function checkIfPoints(checkedArr) {
 
     if (checkIfMarked(checkedArr) === true) {
 
-        calculatePoints(checkedArr);
+        score = calculatePoints(checkedArr);
+
+        console.log('score is ' + score)
 
     } else {
 
@@ -428,26 +430,33 @@ function calculatePoints(checkedArr) {
 
     })
 
-    console.log(scoreTable);
-
     var strongDice = [1,5];
 
     var weakDice = [2,3,4,6];
 
     Object.keys(scoreTable).forEach(function(item,index,array) {
 
-        //TODO Check if straight
+        item = parseInt(item)
+        
+        if(scoreTable[item] === 1 && checkIfStraight(scoreTable)){
 
-        //TODO Check if three par 
-        if(scoreTable[item] === 2 && checkIfThreePairs()){
+            newScore += 2000;
 
         }
 
-        if (weakDice.includes(item) && scoreTable[item] > 2) {
+        if(scoreTable[item] === 2 && checkIfThreePairs(scoreTable)){
+
+            newScore += 1500;
+
+        }
+
+        if (weakDice.includes(parseInt(item)) && scoreTable[item] > 2) {
 
             newScore += calculateWeakDicePoints(item, scoreTable[item]);
 
-        }  else if(strongDice.includes(item)) {
+        }  
+
+        if(strongDice.includes(parseInt(item)) && scoreTable[item] > 0) {
 
             newScore += calculateStrongDicePoints(item, scoreTable[item]);
 
@@ -456,6 +465,7 @@ function calculatePoints(checkedArr) {
     })
 
 
+    return newScore;
 
 
 }
@@ -487,11 +497,13 @@ function calculateStrongDicePoints(diceNumber, amount){
 
         if(diceNumber === 1){
 
-            score = diceNumber*1000;
+            score = 1000;
 
-        } else {
+        } 
+        
+        if(diceNumber === 5){
             
-            score = diceNumber*100;
+            score = 500;
         
         }
         
@@ -500,11 +512,13 @@ function calculateStrongDicePoints(diceNumber, amount){
 
         if(diceNumber === 1){
 
-            return diceNumber*100;
+            return amount*100;
 
-        } else {
+        } 
+        
+        if(diceNumber === 5){
             
-            return diceNumber*50;
+            return amount*50;
         
         }
         
@@ -523,6 +537,50 @@ function calculateStrongDicePoints(diceNumber, amount){
 
         default:
             return score
+    }
+
+}
+
+function checkIfThreePairs(scoreTable){
+
+    var count = 0;
+
+    Object.keys(scoreTable).forEach(function(item,index,array) {
+
+        if(scoreTable[item] === 2){
+            
+            count++;
+
+        }
+
+    })
+
+    if(count === 3){
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+function checkIfStraight(scoreTable){
+
+    var count = 0;
+
+    Object.keys(scoreTable).forEach(function(item,index,array) {
+
+        if(scoreTable[item] === 1){
+            
+            count++;
+
+        }
+
+    })
+
+    if(count === 6){
+        return true;
+    } else {
+        return false;
     }
 
 }
